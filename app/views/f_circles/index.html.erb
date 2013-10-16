@@ -1,0 +1,9 @@
+<h1>View your Friend Circles!</h1>
+
+<% FCircle.all.each do |friend_circle| %>
+	<% if friend_circle.user_id == current_user.id %>
+		<%= link_to friend_circle.name, f_circle_url(friend_circle) %>
+	<% end %>
+<% end %>
+
+<%= link_to "Create a New Friend Circle!", new_f_circle_url %>
